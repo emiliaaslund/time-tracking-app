@@ -1,18 +1,24 @@
 # time-tracking-app
 
-## How to Start: 
+## How to Start & Use:
 
+npm install
+npm install -g json-server
+npm run dev
+npm run backend
 
-### CSS: 
-- Material UI & Material Icons: 
+### Styling:
 
-First time trying Material UI, I wanted to learn something new. 
+- Material UI, Material Icons, Datepicker
 
-It's simple, easy to use, fast and developed for mobile-first. 
-It saves me a lot of time for styling so I can focus on the functionality without compromising the design. 
+First time trying Material UI, because I wanted to try something new. It's was fun but tricky!
+I usually write vanilla CSS / or use Bootstrap but Material UI seemed like a good choice when we were going to make a mobile-first app.
+It's very minimalistic now, maybe I will add more styling and colors in the future.
 
-### Npm Packages: 
+### Npm Packages:
 
 - React Router Dom
-- Axios: My preferred way to make API-requests. 
-- Json-Server: Perfectt to use when you need a fake backend. 
+- Axios: My preferred way to make API-requests.
+- Json-Server: Perfect to use when you need a fake backend.
+- Dayjs: I wanted to try after our teacher talked about it in class.
+- uuid: to easy generate id.
