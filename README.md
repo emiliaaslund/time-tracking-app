@@ -3,8 +3,11 @@
 ## How to Start & Use:
 
 npm install
+
 npm install -g json-server
+
 npm run dev
+
 npm run backend
 
 ### Styling:
