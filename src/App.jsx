@@ -1,22 +1,22 @@
-import { useState } from "react";
 import "./App.css";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //pages
 import Root from "./pages/Root";
 import Calendar from "./pages/Calendar";
-import Timer from "./pages/Timer";
+import TimerPage from "./pages/Timer";
 import Overview from "./pages/Overview";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-
+    errorElement: <ErrorPage />,
     children: [
       {
-        path: "timer",
-        element: <Timer />,
+        path: "/",
+        element: <TimerPage />,
       },
       {
         path: "calendar",

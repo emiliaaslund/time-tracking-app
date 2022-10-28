@@ -1,32 +1,56 @@
 {
   "projects": [
-    { "id": "<random id>", "name": "Projekt nr 1", "color": "#4E0E9F" }
+    {
+      "id": "479c65c5-f3f5-44ac-a520-e2f94307f96b",
+      "name": "torsdag"
+    },
+    {
+      "id": "921384a2-4389-470f-a206-d4e9c92baf8c",
+      "name": "onsdag"
+    },
+    {
+      "id": "58a0158f-2a03-476c-8b55-f4539b0457d6",
+      "name": "Fredag"
+    }
   ],
   "tasks": [
     {
-      "id": "<random id>",
-      "projectId": "<project id>",
-      "title": "Läsa genom Reacts nya dokumentation"
+      "id": "e3e513f0-7618-478a-bb2e-542a179db3a5",
+      "name": "laga mat",
+      "projectId": "479c65c5-f3f5-44ac-a520-e2f94307f96b",
+      "date": "2022-10-26"
+    },
+    {
+      "id": "9b36fb19-deed-4aef-899b-4d5e486705a4",
+      "name": "kaffe",
+      "projectId": "58a0158f-2a03-476c-8b55-f4539b0457d6",
+      "date": "2022-10-27"
+    },
+    {
+      "id": "2fe5a89f-6235-44f5-b295-d825217175f3",
+      "name": "test",
+      "projectId": "921384a2-4389-470f-a206-d4e9c92baf8c",
+      "date": "2022-10-28"
     }
   ],
   "timelogs": [
     {
-      "id": "<random id>",
-      "taskId": "<task id>",
-      "start": "2022-10-12T10:49:33.081Z",
-      "end": "2022-10-12T10:49:33.081Z"
+      "projectId": "921384a2-4389-470f-a206-d4e9c92baf8c",
+      "name": "test",
+      "startTime": "20:49:25",
+      "endTime": "20:49:25",
+      "startDate": "2022-10-28",
+      "endDate": "2022-10-28",
+      "id": "3cb2a97f-7fe9-45d6-a9ff-b77e1f7df5a1"
     },
     {
-      "id": "<random id>",
-      "taskId": "<task id>",
-      "start": "2022-10-12T10:49:33.081Z",
-      "end": "2022-10-12T10:49:33.081Z"
-    },
-    {
-      "id": "<random id>",
-      "taskId": "<task id>",
-      "start": "2022-10-12T10:49:33.081Z",
-      "end": "2022-10-12T10:49:33.081Z"
+      "projectId": "58a0158f-2a03-476c-8b55-f4539b0457d6",
+      "name": "kaffe",
+      "startTime": "20:52:01",
+      "endTime": "20:52:02",
+      "startDate": "2022-10-27",
+      "endDate": "2022-10-28",
+      "id": "1dbb4f27-bc20-491e-97f8-8bf069c25d4b"
     }
   ]
 }

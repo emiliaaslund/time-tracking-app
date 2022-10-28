@@ -1,12 +1,22 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
+
+import { ProjectProvider } from "../context/ProjectContext";
+import { TaskProvider } from "../context/TaskContext";
+import { TimelogProvider } from "../context/TimelogContext";
 
 function Root() {
   return (
     <>
-      <Outlet />
-      <Navbar />
+      <ProjectProvider>
+        <TaskProvider>
+          <TimelogProvider>
+            <Outlet />
+            <Navbar />
+          </TimelogProvider>
+        </TaskProvider>
+      </ProjectProvider>
     </>
   );
 }
