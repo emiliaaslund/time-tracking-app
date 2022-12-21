@@ -10,7 +10,8 @@
     },
     {
       "id": "58a0158f-2a03-476c-8b55-f4539b0457d6",
-      "name": "Fredag"
+      "name": "Fredag",
+      "price": 100
     }
   ],
   "tasks": [
@@ -25,12 +26,6 @@
       "name": "kaffe",
       "projectId": "58a0158f-2a03-476c-8b55-f4539b0457d6",
       "date": "2022-10-27"
-    },
-    {
-      "id": "2fe5a89f-6235-44f5-b295-d825217175f3",
-      "name": "test",
-      "projectId": "921384a2-4389-470f-a206-d4e9c92baf8c",
-      "date": "2022-10-28"
     }
   ],
   "timelogs": [
@@ -51,6 +46,24 @@
       "startDate": "2022-10-27",
       "endDate": "2022-10-28",
       "id": "1dbb4f27-bc20-491e-97f8-8bf069c25d4b"
+    },
+    {
+      "projectId": "921384a2-4389-470f-a206-d4e9c92baf8c",
+      "name": "test",
+      "startTime": "09:23:03",
+      "endTime": "09:23:03",
+      "startDate": "2022-12-14",
+      "endDate": "2022-12-14",
+      "id": "c8450952-4a8f-4845-ab0b-56baab08e1ae"
+    },
+    {
+      "projectId": "479c65c5-f3f5-44ac-a520-e2f94307f96b",
+      "name": "laga mat",
+      "startTime": "18:34:23",
+      "endTime": "18:34:24",
+      "startDate": "2022-12-21",
+      "endDate": "2022-12-21",
+      "id": "c023a96a-532f-431a-a3c7-055237365600"
     }
   ]
 }

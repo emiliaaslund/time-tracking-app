@@ -29,7 +29,7 @@ function AddTask() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [taskInput, setTaskInput] = useState("");
+  let [taskInput, setTaskInput] = useState("");
   const [projectId, setProjectId] = useState("");
 
   //måste ha detta för modalen ska funka
@@ -48,22 +48,28 @@ function AddTask() {
   };
 
   function handleInputTask(e) {
-    setTaskInput(e.target.value || "");
+    setTaskInput(e.target.value);
+    taskInput = "";
   }
 
   const handleSubmit = async (e) => {
-    const date = dayjs().format("YYYY-MM-DD");
-    setDate(date);
-    const data = await addTask(randomId, taskInput, projectId, date);
-    getTaskData();
-    console.log(tasks);
-    setTaskInput("");
+    if (!taskInput) {
+      console.log("You must enter values for all required fields");
+    } else {
+      const date = dayjs().format("YYYY-MM-DD");
+      setDate(date);
+      const data = await addTask(randomId, taskInput, projectId, date);
+      getTaskData();
+      console.log(tasks);
+      setTaskInput("");
+    }
   };
 
   const handleChange = (e) => {
     setProjectId(e.target.value);
     console.log(projectId, "projectId");
   };
+
   return (
     <div>
       <Button
@@ -88,6 +94,7 @@ function AddTask() {
             component="h2"
             align="center"
             m="10px"
+            data-testid="title"
           >
             Add a task
           </Typography>
@@ -96,9 +103,13 @@ function AddTask() {
             <FormControl variant="outlined" fullWidth>
               <TextField
                 color="secondary"
+                required
                 label="Add a new task"
                 value={taskInput}
                 onChange={handleInputTask}
+                inputProps={{
+                  "data-testid": "testInput",
+                }}
               ></TextField>
               <TextField
                 color="secondary"
@@ -106,9 +117,20 @@ function AddTask() {
                 value={projectId}
                 onChange={handleChange}
                 select
+                required
+                inputProps={{
+                  "data-testid": "select",
+                }}
+                // data-testid="select"
               >
                 {projects.map((project) => (
-                  <MenuItem value={project.id} key={project.id}>
+                  <MenuItem
+                    value={project.id}
+                    key={project.id}
+                    inputProps={{
+                      "data-testid": "select-options",
+                    }}
+                  >
                     {project.name}
                   </MenuItem>
                 ))}
@@ -121,6 +143,9 @@ function AddTask() {
                   e.preventDefault();
                   handleSubmit();
                   handleClose();
+                }}
+                inputProps={{
+                  "data-testid": "submitBtn",
                 }}
               >
                 ADD A TASK

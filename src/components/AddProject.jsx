@@ -47,8 +47,12 @@ function AddProject() {
     // console.log(projectName);
   }
   const handleSubmit = async (e) => {
-    const data = await addProject(randomId, projectName);
-    getProjectData();
+    if (!projectName) {
+      alert("You must enter values for all required fields");
+    } else {
+      const data = await addProject(randomId, projectName);
+      getProjectData();
+    }
   };
 
   return (
@@ -85,6 +89,9 @@ function AddProject() {
                 label="Project name:"
                 value={projectName}
                 onChange={handleProjectInput}
+                inputProps={{
+                  "data-testid": "Project",
+                }}
               ></TextField>
               <Button
                 variant="contained"

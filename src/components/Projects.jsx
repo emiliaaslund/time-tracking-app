@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 //material ui
@@ -16,13 +16,24 @@ function Projects() {
     getProjectData();
   };
 
+  useEffect(() => {
+    getProjectData();
+  }, []);
+
   return (
     <div>
-      <List>
+      <List data-testid="list">
         {projects.map((project) => (
-          <ListItem button key={project.id}>
-            <ListItemText primary={project.name}></ListItemText>
-            <Button color="secondary" onClick={() => deleteProject(project.id)}>
+          <ListItem button key={project.id} data-testid="listitems">
+            <ListItemText
+              primary={project.name}
+              data-testid="item"
+            ></ListItemText>
+            <Button
+              color="secondary"
+              onClick={() => deleteProject(project.id)}
+              data-testid="deletebtn"
+            >
               X
             </Button>
           </ListItem>

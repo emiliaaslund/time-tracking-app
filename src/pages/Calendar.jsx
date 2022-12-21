@@ -64,7 +64,12 @@ function Calendar() {
         <Typography sx={{ mb: 3 }} variant="h6" align="center">
           Choose a date to se timestamps
         </Typography>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider
+          dateAdapter={AdapterDayjs}
+          inputProps={{
+            "data-testid": "calendartest",
+          }}
+        >
           <Grid container justifyContent="center">
             <FormControl fullWidth>
               <DatePicker
@@ -74,7 +79,14 @@ function Calendar() {
                 value={selectedDate}
                 onChange={handleChange}
                 renderInput={(selectedDate) => (
-                  <TextField color="secondary" {...selectedDate} />
+                  <TextField
+                    className="test"
+                    inputProps={{
+                      "data-testid": "calendartest",
+                    }}
+                    color="secondary"
+                    {...selectedDate}
+                  />
                 )}
               />
             </FormControl>

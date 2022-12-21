@@ -9,15 +9,6 @@ import { useTasks } from "../context/TaskContext";
 
 function Tasks() {
   const { tasks, getTaskData } = useTasks();
-  const [secondary, setSecondary] = useState(false);
-
-  function handleShowTask(id) {
-    setSecondary(true);
-    if (secondary === true) {
-      setSecondary(false);
-    }
-    // console.log(id);
-  }
 
   const deleteTask = async (id) => {
     const removeId = tasks.filter((task) => task.id === id);
@@ -30,16 +21,13 @@ function Tasks() {
     <div>
       <List>
         {tasks.map((task) => (
-          <ListItem
-            button
-            key={task.id}
-            onClick={(e) => handleShowTask(task.id)}
-          >
-            <ListItemText
-              primary={task.name}
-              secondary={secondary ? `Added: ${task.date} ` : null}
-            ></ListItemText>
-            <Button color="secondary" onClick={() => deleteTask(task.id)}>
+          <ListItem key={task.id}>
+            <ListItemText id="ListItem" primary={task.name}></ListItemText>
+            <Button
+              id="X"
+              color="secondary"
+              onClick={() => deleteTask(task.id)}
+            >
               X
             </Button>
           </ListItem>
